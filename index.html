@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sentiment Analysis Data Annotator</title>
+<style>
+body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+textarea { width: 100%; box-sizing: border-box; }
+button { padding: 8px 14px; margin: 4px 4px 4px 0; cursor: pointer; }
+#review-box { background: #f4f4f4; border-radius: 10px; padding: 16px; margin: 16px 0; font-size: 16px; min-height: 60px; }
+.lbl-btn { font-size: 15px; }
+#progress { color: #666; font-size: 14px; }
+input[type=text] { width: 100%; box-sizing: border-box; padding: 8px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h2>Sentiment Analysis Data Annotator</h2>
+
+<div id="setup">
+<textarea id="input-area" rows="6" placeholder="Paste reviews, one per line"></textarea><br>
+<button id="load-sample">Use sample reviews</button>
+<button id="load-btn">Start labeling</button>
+</div>
+
+<div id="annotator" style="display:none;">
+<p id="progress">Review 1 of 1</p>
+<div id="review-box"></div>
+<div>
+<button class="lbl-btn" id="btn-pos">Positive (1)</button>
+<button class="lbl-btn" id="btn-neu">Neutral (2)</button>
+<button class="lbl-btn" id="btn-neg">Negative (3)</button>
+</div>
+<input type="text" id="notes-input" placeholder="Add a note (optional)">
+<div>
+<button id="back-btn">Back</button>
+<button id="skip-btn">Skip</button>
+<button id="export-btn">Export CSV</button>
+</div>
+</div>
+
+<script>
+var reviews = [];
+var idx = 0;
+var sample = [
+"The battery lasts all day and charging is fast, very happy with this purchase.",
+"Package arrived damaged and the screen has a scratch already.",
+"It works fine, does what it says, nothing special about it.",
+"Absolutely love this product, exceeded my expectations in every way.",
+"Customer service was unhelpful and the return process took weeks.",
+"Average quality for the price, would not buy again but not terrible either.",
+"Best purchase I made this year, highly recommend to everyone.",
+"Stopped working after two days, complete waste of money.",
+"It is okay, matches the description, no strong feelings either way."
+];
+
+function renderCurrent(){
+document.getElementById("progress").textContent = "Review " + (idx+1) + " of " + reviews.length;
+document.getElementById("review-box").textContent = reviews[idx].text;
+document.getElementById("notes-input").value = reviews[idx].notes || "";
+}
+
+function startWith(list){
+reviews = list.map(function(t){ return {text:t, label:"", notes:""}; });
+idx = 0;
+document.getElementById("setup").style.display = "none";
+document.getElementById("annotator").style.display = "block";
+renderCurrent();
+}
+
+document.getElementById("load-sample").onclick = function(){ startWith(sample); };
+
+document.getElementById("load-btn").onclick = function(){
+var raw = document.getElementById("input-area").value.split("\n").map(function(s){return s.trim();}).filter(Boolean);
+if(raw.length === 0){ alert("Paste at least one review, or use sample reviews."); return; }
+startWith(raw);
+};
+
+function label(l){
+if(reviews.length === 0) return;
+reviews[idx].label = l;
+reviews[idx].notes = document.getElementById("notes-input").value;
+if(idx < reviews.length - 1){ idx++; renderCurrent(); }
+}
+
+document.getElementById("btn-pos").onclick = function(){ label("positive"); };
+document.getElementById("btn-neu").onclick = function(){ label("neutral"); };
+document.getElementById("btn-neg").onclick = function(){ label("negative"); };
+
+document.getElementById("skip-btn").onclick = function(){
+reviews[idx].notes = document.getElementById("notes-input").value;
+if(idx < reviews.length - 1){ idx++; renderCurrent(); }
+};
+
+document.getElementById("back-btn").onclick = function(){
+if(idx > 0){ idx--; renderCurrent(); }
+};
+
+document.addEventListener("keydown", function(e){
+if(document.getElementById("annotator").style.display === "none") return;
+if(document.activeElement === document.getElementById("notes-input")) return;
+if(e.key === "1") label("positive");
+if(e.key === "2") label("neutral");
+if(e.key === "3") label("negative");
+});
+
+document.getElementById("export-btn").onclick = function(){
+var rows = [["review","label","notes"]];
+reviews.forEach(function(r){ rows.push([r.text, r.label, r.notes || ""]); });
+var csv = rows.map(function(row){
+return row.map(function(cell){ return '"' + String(cell).replace(/"/g,'""') + '"'; }).join(",");
+}).join("\n");
+var blob = new Blob([csv], {type:"text/csv"});
+var url = URL.createObjectURL(blob);
+var a = document.createElement("a");
+a.href = url;
+a.download = "labeled_reviews.csv";
+a.click();
+};
+</script>
+</body>
+</html>
