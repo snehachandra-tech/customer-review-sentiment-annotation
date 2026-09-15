@@ -3,32 +3,32 @@
 
 ## 📌 Project Overview
 
-This project is a simple Sentiment Analysis application developed using Python. It analyzes text entered by the user and identifies whether the sentiment is Positive, Negative, or Neutral.
+This project is a beginner-friendly Sentiment Analysis application developed using Python. It analyzes the text entered by the user and predicts whether the sentiment is Positive, Negative, or Neutral.
 
-The project demonstrates the basic concepts of Natural Language Processing (NLP) and text classification. It is suitable for beginners who want to learn how Python can be used to analyze text data.
+The project uses the TextBlob Python library to perform basic sentiment analysis. It demonstrates how Python can be used to process text and understand its sentiment.
 
 ## 🎯 Objectives
 
-- Understand the basics of Sentiment Analysis.
-- Analyze text data using Python.
-- Classify text into Positive, Negative, or Neutral sentiments.
-- Learn basic Natural Language Processing concepts.
-- Build a beginner-friendly Python project.
+- Learn the basics of Sentiment Analysis.
+- Use Python for text processing.
+- Analyze user-provided text.
+- Classify text into Positive, Negative, or Neutral.
+- Understand the use of Python libraries.
 
 ## ✨ Features
 
-- Accepts text input from the user.
-- Analyzes the sentiment of the text.
-- Displays the predicted sentiment.
-- Simple and easy-to-use interface.
-- Beginner-friendly Python implementation.
+- Simple text input from the user.
+- Sentiment prediction using Python.
+- Positive, Negative, and Neutral classification.
+- Easy-to-understand code.
+- Beginner-friendly console application.
 
 ## 🛠️ Technologies Used
 
 - Python 3
+- TextBlob
 - Natural Language Processing (NLP)
-- Text Classification
-- VS Code
+- Visual Studio Code
 - GitHub
 
 ## 📂 Project Structure
@@ -40,33 +40,31 @@ Sentiment-Analysis-Python
 └── README.md
 ```
 
-## ⚙️ How to Run the Project
+## ⚙️ Installation
 
-### Step 1: Install Python
+### 1. Install Python
 
-Download and install Python 3 from:
+Download Python from:
 
 https://www.python.org/downloads/
 
-### Step 2: Clone the Repository
+### 2. Install TextBlob
+
+Open the VS Code terminal and run:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+pip install textblob
 ```
 
-### Step 3: Open the Project Folder
+## ▶️ How to Run
 
-```bash
-cd Sentiment-Analysis-Python
-```
-
-### Step 4: Run the Python File
+Run the following command in the terminal:
 
 ```bash
 python sentiment_analysis.py
 ```
 
-## 💻 Sample Output
+## 💻 Example
 
 ```text
 Welcome to Sentiment Analysis
@@ -76,24 +74,24 @@ Enter your text: I love this project!
 Sentiment: Positive
 ```
 
-## 📚 Concepts Used
+## 📚 Python Concepts Used
 
-- Python Variables
+- Variables
 - Strings
-- Conditional Statements
 - Functions
-- User Input
-- Natural Language Processing
-- Text Classification
+- If-else statements
+- User input
+- Python libraries
+- Text processing
 
 ## 🚀 Future Improvements
 
-- Add a larger dataset.
+- Add a larger text dataset.
 - Use Machine Learning models.
-- Improve sentiment prediction accuracy.
+- Improve sentiment prediction.
 - Add a graphical user interface.
 - Support multiple languages.
-- Create a web-based sentiment analysis application.
+- Build a web-based application.
 
 ## 👩‍💻 Author
 
@@ -107,4 +105,4 @@ CodeAlpha Python Programming Internship
 
 ### Project: Sentiment Analysis Using Python
 
-Built with Python.
+Built using Python.
