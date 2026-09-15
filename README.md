@@ -1,108 +1,119 @@
 
-# 📊 Sentiment Analysis Using Python
+# 🏷️ Sentiment Analysis Data Annotation Project
 
 ## 📌 Project Overview
 
-This project is a beginner-friendly Sentiment Analysis application developed using Python. It analyzes the text entered by the user and predicts whether the sentiment is Positive, Negative, or Neutral.
+This project is created as part of my AI Data Annotation portfolio to demonstrate my understanding of text data labeling and sentiment classification.
 
-The project uses the TextBlob Python library to perform basic sentiment analysis. It demonstrates how Python can be used to process text and understand its sentiment.
+The main goal of this project is to organize text data and assign sentiment labels such as Positive, Negative, and Neutral. These labeled datasets can be useful for training and evaluating Natural Language Processing (NLP) and Machine Learning models.
 
-## 🎯 Objectives
+I used Python to work with text data and understand the basic workflow of sentiment annotation.
 
-- Learn the basics of Sentiment Analysis.
-- Use Python for text processing.
-- Analyze user-provided text.
-- Classify text into Positive, Negative, or Neutral.
-- Understand the use of Python libraries.
+## 🎯 Project Objectives
 
-## ✨ Features
+- Understand the basics of text data annotation.
+- Label text data according to its sentiment.
+- Create an organized and structured dataset.
+- Practice identifying Positive, Negative, and Neutral text.
+- Use Python for basic data processing.
+- Understand how labeled data can support AI and Machine Learning projects.
 
-- Simple text input from the user.
-- Sentiment prediction using Python.
-- Positive, Negative, and Neutral classification.
-- Easy-to-understand code.
-- Beginner-friendly console application.
+## 🛠️ Tools & Technologies
 
-## 🛠️ Technologies Used
-
-- Python 3
-- TextBlob
+- Python
+- Pandas
+- Excel / CSV
 - Natural Language Processing (NLP)
-- Visual Studio Code
+- Data Annotation
+- Text Classification
 - GitHub
 
 ## 📂 Project Structure
 
 ```text
-Sentiment-Analysis-Python
+Sentiment-Analysis-Data-Annotation
+│
+├── data
+│   └── sentiment_dataset.csv
 │
 ├── sentiment_analysis.py
-└── README.md
+│
+├── README.md
+│
+└── requirements.txt
 ```
 
-## ⚙️ Installation
+## 🏷️ Annotation Categories
 
-### 1. Install Python
+The text data is classified into three sentiment categories:
 
-Download Python from:
+| Label | Meaning | Example |
+|---|---|---|
+| Positive | Shows a positive feeling | I love this product. |
+| Negative | Shows a negative feeling | This product is terrible. |
+| Neutral | Shows no strong feeling | The product was delivered today. |
 
-https://www.python.org/downloads/
+## 📊 Sample Dataset
 
-### 2. Install TextBlob
+| Text | Sentiment |
+|---|---|
+| I really enjoyed this movie. | Positive |
+| The service was disappointing. | Negative |
+| My order arrived today. | Neutral |
+| The product quality is excellent. | Positive |
+| The experience was not good. | Negative |
 
-Open the VS Code terminal and run:
+## 🔄 Data Annotation Workflow
 
-```bash
-pip install textblob
-```
+1. Collect text data.
+2. Read and understand each text.
+3. Assign the correct sentiment label.
+4. Review labels for consistency.
+5. Organize the dataset in CSV format.
+6. Use Python to process the labeled data.
 
-## ▶️ How to Run
+## 🐍 Python Usage
 
-Run the following command in the terminal:
+Python is used in this project for:
 
-```bash
-python sentiment_analysis.py
-```
+- Reading text datasets.
+- Organizing and processing data.
+- Working with CSV files.
+- Checking sentiment labels.
+- Preparing data for further analysis.
 
-## 💻 Example
+## 📚 Skills Demonstrated
 
-```text
-Welcome to Sentiment Analysis
+- Text Data Annotation
+- Sentiment Classification
+- Data Labeling
+- Dataset Organization
+- Data Quality Checking
+- Python Programming
+- Basic NLP Understanding
+- Attention to Detail
 
-Enter your text: I love this project!
+## 🎯 Relevance to AI Data Annotation
 
-Sentiment: Positive
-```
+This project demonstrates my interest in AI Data Annotation and my ability to work with text-based datasets.
 
-## 📚 Python Concepts Used
-
-- Variables
-- Strings
-- Functions
-- If-else statements
-- User input
-- Python libraries
-- Text processing
+It shows my understanding of how human-labeled data can help prepare datasets for AI and Machine Learning applications.
 
 ## 🚀 Future Improvements
 
-- Add a larger text dataset.
-- Use Machine Learning models.
-- Improve sentiment prediction.
-- Add a graphical user interface.
-- Support multiple languages.
-- Build a web-based application.
+- Create a larger labeled dataset.
+- Add more sentiment categories.
+- Use Python to check dataset quality.
+- Compare manual labels with Machine Learning predictions.
+- Build a simple sentiment classification model.
+- Add annotation guidelines for consistent labeling.
 
-## 👩‍💻 Author
+## 👩‍💻 About Me
 
-Sneha Chandra
+I am Sneha Chandra, a BTech CSEDS student interested in AI, Machine Learning, and Data Annotation.
 
-BTech CSEDS Student
+I am building practical projects to improve my Python, data handling, and text annotation skills.
 
-## 📜 Internship
+## 🔗 GitHub
 
-CodeAlpha Python Programming Internship
-
-### Project: Sentiment Analysis Using Python
-
-Built using Python.
+More projects related to AI Data Annotation, Python, and Machine Learning will be added to my portfolio.
